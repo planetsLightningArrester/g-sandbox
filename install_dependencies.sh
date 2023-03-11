@@ -7,6 +7,7 @@
 #                                                 #
 ###################################################
 
+# Some colors for the logs
 RED="\033[0;31m";
 BLUE="\033[0;34m";
 GREEN="\033[0;32m";
@@ -24,11 +25,19 @@ sudo apt update;
 
 # Install deps
 printf "\n[%s] [${BLUE}INFO${NOCOLOR}] Installing deps\n" "$(date +"%T")";
-sudo apt install build-essential gcc gpp make;
+sudo apt install build-essential gcc gpp make cmake;
 
 # Check g++ install
 printf "\n[%s] [${BLUE}INFO${NOCOLOR}] Checking g++ version\n" "$(date +"%T")";
 g++ -v;
+
+# Clone GoogleTest
+if [[ ! -e './googletest' ]]; then
+  printf "\n[%s] [${BLUE}INFO${NOCOLOR}] Cloning GoogleTest\n" "$(date +"%T")";
+  git clone git@github.com:google/googletest.git;
+else
+  printf "\n[%s] [${BLUE}INFO${NOCOLOR}] 'googletest' directory found. Skipping GoogleTest clone\n" "$(date +"%T")";
+fi
 
 # Done
 printf "\n[%s] [${GREEN}INFO${NOCOLOR}] Checking version\n" "$(date +"%T")";

@@ -1,4 +1,17 @@
 {
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.hg/store/**": true,
+    "googletest/**/*": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "googletest/**/*": true
+  },
   "files.associations": {
     "array": "cpp",
     "atomic": "cpp",
@@ -47,5 +60,13 @@
     "stdexcept": "cpp",
     "streambuf": "cpp",
     "typeinfo": "cpp"
-  }
+  },
+  "cSpell.enableFiletypes": [
+    "makefile",
+    "shellscript"
+  ],
+  "cSpell.words": [
+    "googletest",
+    "NOCOLOR"
+  ]
 }

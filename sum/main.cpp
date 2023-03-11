@@ -1,4 +1,4 @@
-#include "sum/sum.h"
+#include "sum/sum.hpp"
 
 int main (int argc, char const *argv[]) {
   

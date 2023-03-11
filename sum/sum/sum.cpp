@@ -1,4 +1,4 @@
-#include "sum.h"
+#include "sum.hpp"
 
 /** Called when missing arguments happened */
 char* MissingArgument::what() {

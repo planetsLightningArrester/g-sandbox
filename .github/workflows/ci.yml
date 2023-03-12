@@ -1,0 +1,41 @@
+# Continuos Integration workflow
+name: CI
+
+defaults:
+  run:
+    shell: bash -ieo pipefail {0}
+
+# Controls when the workflow will run
+on:
+  # Main push
+  push:
+    branches: ['main']
+
+  # Any pull request update
+  pull_request:
+
+  # Can be triggered by other workflows
+  workflow_call:
+
+  # Allow manual trigger
+  workflow_dispatch:
+
+# Jobs
+jobs:
+
+  build-and-run:
+    runs-on: [ self-hosted ]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Clone GoogleTest
+        run:  git clone git@github.com:google/googletest.git
+
+      - name: Run cmake
+        run:  make build
+
+      - name: Run ctest
+        run:  make test
+
+# EOF

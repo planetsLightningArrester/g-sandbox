@@ -1,5 +1,5 @@
-#ifndef SUM_H
-#define SUM_H
+#ifndef SUM_HPP
+#define SUM_HPP
 
 #include <iostream>
 #include <stdlib.h>
@@ -40,4 +40,4 @@ bool isNumber(char *number);
 */
 double sum (int argc, char const *argv[]);
 
-#endif
+#endif /* SUM_HPP */

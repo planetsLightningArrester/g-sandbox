@@ -62,11 +62,17 @@
     "typeinfo": "cpp"
   },
   "cSpell.enableFiletypes": [
+    "cmake",
     "makefile",
     "shellscript"
   ],
   "cSpell.words": [
+    "endforeach",
     "googletest",
-    "NOCOLOR"
-  ]
+    "gtest",
+    "NOCOLOR",
+    "STREQ"
+  ],
+  "cmake.buildDirectory": "${workspaceFolder}/build-vscode",
+  "cmake.configureOnOpen": true
 }

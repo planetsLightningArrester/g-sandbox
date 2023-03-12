@@ -62,7 +62,7 @@ double sum (int argc, char const *argv[]) {
   double result = 0;
 
   // Iterate over the elements
-  for (int i = 1; i < argc; i++) {
+  for (int i = 0; i < argc; i++) {
 
     // If the element is a number
     if (isNumber((char*) argv[i])) result += atof(argv[i]);
@@ -73,10 +73,11 @@ double sum (int argc, char const *argv[]) {
       char messagePlaceholder[] = "The argument %i: '%s' is not a valid number";
       /* The error message placeholder string length */
       int messagePlaceholderLength;
+      int argumentNumber = i + 1;
       /* The argument string length */
       int argumentLength;
       /* The i counter as string */
-      auto s = std::to_string(i);
+      auto s = std::to_string(argumentNumber);
       /* The i counter as string length */
       int counterSize;
 
@@ -87,7 +88,7 @@ double sum (int argc, char const *argv[]) {
 
       // The error message to be displayed with allocated memory
       char *message = (char*) malloc((messagePlaceholderLength + argumentLength + counterSize) * sizeof(*message));
-      sprintf(message, messagePlaceholder, i, argv[i]);
+      sprintf(message, messagePlaceholder, argumentNumber, argv[i]);
 
       throw ArgumentIsNotANumber(message);
     }

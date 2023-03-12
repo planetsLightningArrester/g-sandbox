@@ -25,7 +25,7 @@ sudo apt update;
 
 # Install deps
 printf "\n[%s] [${BLUE}INFO${NOCOLOR}] Installing deps\n" "$(date +"%T")";
-sudo apt install build-essential gcc gpp make cmake;
+sudo apt install build-essential gcc gpp gdb g++ make cmake;
 
 # Check g++ install
 printf "\n[%s] [${BLUE}INFO${NOCOLOR}] Checking g++ version\n" "$(date +"%T")";

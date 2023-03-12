@@ -13,8 +13,9 @@ set(CMAKE_C_STANDARD 99)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-enable_testing()
+# Add libraries used, but not required to test
+add_subdirectory(googletest)
 
 # Add paths to other CMakeLists.txt specifying the tests
-add_subdirectory(googletest)
+enable_testing()
 add_subdirectory(math)

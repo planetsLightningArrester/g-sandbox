@@ -36,6 +36,6 @@ jobs:
         run:  make build
 
       - name: Run ctest
-        run:  make test
+        run:  make build-test
 
 # EOF

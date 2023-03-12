@@ -11,5 +11,4 @@ build:
 
 # Build and run tests
 test:
-	/usr/bin/cmake --build ./build-vscode --config Debug --target all -j 14 --
-	/usr/bin/ctest -j14 --test-dir ./build-vscode -C Debug -T test --output-on-failure
+	cd build-vscode && make && make test
